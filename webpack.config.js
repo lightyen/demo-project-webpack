@@ -1,11 +1,12 @@
 var path = require("path")
 var HtmlWebpackPlugin = require("html-webpack-plugin")
+var { TsConfigPathsPlugin } = require("awesome-typescript-loader")
 
 var outputPath = path.resolve(__dirname, "./dist")
 
 var conf = {
     mode: "development",
-    entry: "./src/index.jsx",
+    entry: "./src/index.tsx",
     output: {
         path: outputPath,
         filename: "bundle.js",
@@ -14,10 +15,11 @@ var conf = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
-                loader: "babel-loader",
+                test: /\.tsx?$/,
+                loader: "awesome-typescript-loader",
                 options: {
-                    babelrc: true,
+                    configFileName: "tsconfig.json",
+                    silent: true,
                 },
                 exclude: /node_modules/,
             },
@@ -25,7 +27,12 @@ var conf = {
         ],
     },
     resolve: {
-        extensions: [".js", ".jsx"],
+        extensions: [".ts", ".tsx", ".js", ".jsx"],
+        plugins: [
+            new TsConfigPathsPlugin({
+                configFile: "tsconfig.json",
+            }),
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
