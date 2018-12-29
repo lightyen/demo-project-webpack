@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.webserver/.webserver
+.webserver/.webserver.exe
+*.log
+debug
+package-lock.json

@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "yarn",
+            "type": "shell",
+            "group": "none",
+            "isBackground": true,
+            "command": "yarn",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "clear": true
+            }
+        }
+    ]
+}
