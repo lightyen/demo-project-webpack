@@ -1,14 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-interface IProps {}
-
-interface IState {
-    liked: boolean
-}
-
-class LikeButton extends React.Component<IProps, IState> {
-    constructor(props: IProps) {
+class LikeButton extends React.Component {
+    constructor(props) {
         super(props)
         this.state = { liked: false }
     }
