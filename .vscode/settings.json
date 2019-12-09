@@ -1,12 +1,10 @@
 {
-    "terminal.integrated.env.windows": {
-        "PATH": "${workspaceFolder}\\node_modules\\.bin;${env:PATH}"
-    },
-    "terminal.integrated.env.linux": {
-        "PATH": "${workspaceFolder}/node_modules/.bin:${env:PATH}"
-    },
-    "terminal.integrated.env.osx": {
-        "PATH": "${workspaceFolder}/node_modules/.bin:${env:PATH}"
-    },
-    "npm.autoDetect": "off",
+  "files.exclude": {
+    "**/.awcache": true,
+    "**/node_modules": true
+  },
+  "files.watcherExclude": {
+    "**/.awcache/**": true
+  },
+  "npm.autoDetect": "off"
 }
